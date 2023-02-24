@@ -19,7 +19,7 @@ jobs:
     - name: publish
       if: |
          false
-         || github.ref == 'refs/heads/main'
+         || github.ref == 'refs/heads/master'
          || startsWith( github.ref, 'refs/tags/')
       run: |
         docker login "${{ vars.DOCKER_REGISTRY }}" -u "${{ vars.DOCKER_REGISTRY_USER }}" -p "${{ secrets.DOCKER_REGISTRY_TOKEN }}"
