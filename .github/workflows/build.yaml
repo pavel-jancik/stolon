@@ -25,4 +25,4 @@ jobs:
         docker login "${{ vars.DOCKER_REGISTRY }}" -u "${{ vars.DOCKER_REGISTRY_USER }}" -p "${{ secrets.DOCKER_REGISTRY_TOKEN }}"
         IMG_NAME="${{ vars.DOCKER_REGISTRY }}:${GITHUB_REF_NAME}-${{ matrix.pg_version }}"
         docker tag stolon:${{ matrix.pg_version }} "${IMG_NAME}"
-        docker push ${{ vars.DOCKER_REGISTRY }}:${{ matrix.pg_version }} "${IMG_NAME}"
+        docker push "${IMG_NAME}"
